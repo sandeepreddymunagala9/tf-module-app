@@ -1,15 +1,4 @@
-terraform {
-  required_providers {
-    awscc = {
-      source  = "hashicorp/awscc"
-      version = "1.2.0"
-    }
-    aws = {
-      source  = "hashicorp/aws"
-      version = "5.54.1"
-    }
-  }
-}
+
 ## iam policy
 resource "aws_iam_policy" "policy" {
   name        = "${var.component}-${var.env}-ssm-policy"
@@ -68,7 +57,7 @@ resource "aws_security_group" "sg" {
   ingress {
     from_port   = 0
     to_port     = 0
-    protocol    = "tcp"
+    protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
   egress {
