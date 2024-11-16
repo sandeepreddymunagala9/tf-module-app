@@ -82,7 +82,7 @@ resource "aws_instance" "instance" {
 }
 ## dns
 resource "aws_route53_record" "dns" {
-  name    = "${var.component}-${var.env}-dns"
+  name    = "${var.component}-${var.env}"
   type    = "A"
   ttl     = "30"
   zone_id = "Z000681610YP12S51X5A5"
