@@ -73,7 +73,7 @@ resource "aws_security_group" "sg" {
 ## ec2
 resource "aws_instance" "instance" {
   ami = data.aws_ami.ami.id
-  instance_type = "t3.micro"
+  instance_type = "t3.large"
   vpc_security_group_ids = [aws_security_group.sg.id]
   iam_instance_profile = aws_iam_instance_profile.instance_profile.name
   tags = {
